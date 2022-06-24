@@ -42,8 +42,9 @@
         </v-row>
         <v-divider></v-divider>
         <v-card class="my-4">
-            <v-card-title class="my-auto justify-end">Checkout: Rp. {{$store.getters.totalPrice}}</v-card-title>
-            <v-btn tile @click="bayar(items)"
+            <v-card-title class="my-auto justify-end">Checkout: Rp. {{$store.getters.totalPrice.toLocaleString("id-ID")}}</v-card-title>
+            <v-btn tile
+             @click="bayar(items)"
             class="my-auto"> Order</v-btn>
         </v-card>
     </v-container>

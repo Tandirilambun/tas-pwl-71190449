@@ -49,6 +49,7 @@ export default {
         register(){
             firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
             .then(() => {
+                alert("Register Bershasil "+this.email+" silahkan login")
                 this.username = ""
                 this.email = ""
                 this.password = ""

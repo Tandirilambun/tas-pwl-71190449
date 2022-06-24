@@ -15,7 +15,6 @@
                         <v-text-field label="E-mail" v-model="email" placeholder="Enter Email">
                         </v-text-field>
                         <v-text-field label="Password" type="password" v-model="password"></v-text-field>
-                        {{email}}
                         <v-btn color="green" 
                         @click="login" 
                         class="rounded-0 mb-2" 
@@ -56,9 +55,9 @@ export default {
                 // this.$store.state.isLogin = true
                 // this.$store.state.email = this.email
                 this.$store.commit("loginState", {isLogin, email, password})
+                alert("Welcome "+ email)
                 this.email = ""
                 this.password = ""
-                this.
                 this.$router.push('/')
                 this.exitLogin()
             })
