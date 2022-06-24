@@ -71,13 +71,14 @@ export default new Vuex.Store({
       })
       if(produkInCart.qty > 1){
         produkInCart.qty -=1;
+      }else{
+        state.cart = state.cart.filter(product => {
+          return product.id !== item.id});
       }
-      else{
-        state.cart.splice(state.cart.indexOf(produkInCart,1))
-      }
-    }
-
-
+      // else{
+      //   state.cart.splice(state.cart.indexOf(produkInCart,1))
+      // }
+    },
   },
   actions: {
     addToCart({commit},item){
@@ -88,7 +89,7 @@ export default new Vuex.Store({
     },
     reduceQty({commit}, item){
       commit ("reduceQtyItem", item)
-    }
+    },
   },
   modules: {
 
